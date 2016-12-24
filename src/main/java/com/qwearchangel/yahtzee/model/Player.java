@@ -19,7 +19,7 @@ public class Player {
     int six;
     int bonus;
     int threeOfAKind;
-    int forOfAKind;
+    int fourOfAKind;
     int fullHouse;
     int smallStright;
     int largeStright;
@@ -32,9 +32,9 @@ public class Player {
     public Player(
             int one, int two, int three, int four,
             int five, int six, int bonus, int threeOfAKind,
-            int forOfAKind, int fullHouse, int smallStright,
+            int fourOfAKind, int fullHouse, int smallStright,
             int largeStright, int yahtzee, int chance) {
-        
+
         this.one = one;
         this.two = two;
         this.three = three;
@@ -43,7 +43,7 @@ public class Player {
         this.six = six;
         this.bonus = bonus;
         this.threeOfAKind = threeOfAKind;
-        this.forOfAKind = forOfAKind;
+        this.fourOfAKind = fourOfAKind;
         this.fullHouse = fullHouse;
         this.smallStright = smallStright;
         this.largeStright = largeStright;
@@ -116,11 +116,11 @@ public class Player {
     }
 
     public int getForOfAKind() {
-        return forOfAKind;
+        return fourOfAKind;
     }
 
     public void setForOfAKind(int forOfAKind) {
-        this.forOfAKind = forOfAKind;
+        this.fourOfAKind = forOfAKind;
     }
 
     public int getFullHouse() {
@@ -161,5 +161,12 @@ public class Player {
 
     public void setChance(int chance) {
         this.chance = chance;
+    }
+
+    public int getSum() {
+        return this.one + this.two + this.three + this.four + this.five
+                + this.six + this.bonus + this.threeOfAKind + this.fourOfAKind 
+                + this.fullHouse + this.smallStright + this.largeStright
+                + this.yahtzee + this.chance;
     }
 }
