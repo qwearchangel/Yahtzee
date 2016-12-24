@@ -42,11 +42,23 @@ public class YahtzeeApiTest {
     public void rollDiceShouldNotBeEmpty() {
         YahtzeeApi api = new YahtzeeApi();
         String[] diceArray = api.GetDice();
-        System.out.println(Arrays.toString(diceArray));
+        
         assertNotNull(diceArray[0]);
         assertNotNull(diceArray[1]);
         assertNotNull(diceArray[2]);
         assertNotNull(diceArray[3]);
         assertNotNull(diceArray[4]);
+    }
+    
+    @Test
+    public void rollDiceShouldBeHigherThenZero() {
+        YahtzeeApi api = new YahtzeeApi();
+        String[] diceArray = api.GetDice();
+        
+        assertTrue(Integer.parseInt(diceArray[0]) > 0);
+        assertTrue(Integer.parseInt(diceArray[1]) > 0);
+        assertTrue(Integer.parseInt(diceArray[2]) > 0);
+        assertTrue(Integer.parseInt(diceArray[3]) > 0);
+        assertTrue(Integer.parseInt(diceArray[4]) > 0);
     }
 }
