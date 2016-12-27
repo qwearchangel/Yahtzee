@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.qwearchangel.yahtzee;
 
 import com.qwearchangel.yahtzee.api.YahtzeeApi;
+import com.qwearchangel.yahtzee.utils.Point;
 import java.util.Arrays;
 
 /**
@@ -17,10 +13,20 @@ public class Main {
     // For manual testing. For now!
     public static void main(String[] args) {
         YahtzeeApi api = new YahtzeeApi();
-        for (int i = 0; i < 100; i++) {
-            String[] diceArray = api.GetDice();
-            System.out.println(Arrays.toString(diceArray));
-        }
-
+        
+        int va = Point.FULL_HOUSE.getPoint();
+        System.out.println("full house: " + va);
+        
+        String[] d = api.GetDice();
+        
+        System.out.println(Arrays.toString(d));
+        
+        va = Point.ONES.getPoint(d);
+        System.out.println("Sum of ones " + va);
+        
+        String[] array = {"1","4","4","2","4"};
+        va = Point.THREE_OF_A_KIND.getPoint(array);
+        
+        System.out.println("sum of thee of a kind " + va);
     }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.qwearchangel.yahtzee.model;
 
 import org.junit.After;
@@ -37,6 +32,11 @@ public class PlayerTest {
     public void tearDown() {
     }
 
+    @Test
+    public void test() {
+        
+    }
+    
     @Test
     public void playerShouldReadPoints() {
         Player player = new Player();
