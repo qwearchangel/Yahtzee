@@ -1,5 +1,6 @@
 package com.qwearchangel.yahtzee.api;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -13,6 +14,7 @@ class Dice {
         for (int i = 0; i < 5; i++) {
             diceArray[i] = getRandomDiceNumber();
         }
+        Arrays.sort(diceArray);
         return diceArray;
     }
     

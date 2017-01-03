@@ -14,10 +14,10 @@ public class Main {
     public static void main(String[] args) {
         YahtzeeApi api = new YahtzeeApi();
         
-        int va = Point.FULL_HOUSE.getPoint();
-        System.out.println("full house: " + va);
-        
         String[] d = api.GetDice();
+        
+        int va = Point.FULL_HOUSE.getPoint(d);
+        System.out.println("full house: " + va);
         
         System.out.println(Arrays.toString(d));
         
