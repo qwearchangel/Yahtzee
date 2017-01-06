@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.qwearchangel.yahtzee.api;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -18,6 +14,7 @@ class Dice {
         for (int i = 0; i < 5; i++) {
             diceArray[i] = getRandomDiceNumber();
         }
+        Arrays.sort(diceArray);
         return diceArray;
     }
     
