@@ -6,6 +6,7 @@ package com.qwearchangel.yahtzee.model;
  */
 public class Player {
 
+    String name;
     int one;
     int two;
     int three;
@@ -24,12 +25,11 @@ public class Player {
     public Player() {
     }
 
-    public Player(
-            int one, int two, int three, int four,
-            int five, int six, int bonus, int threeOfAKind,
-            int fourOfAKind, int fullHouse, int smallStright,
-            int largeStright, int yahtzee, int chance) {
-
+    public Player(String name, int one, int two, int three, int four, int five,
+            int six, int bonus, int threeOfAKind, int fourOfAKind,
+            int fullHouse, int smallStright, int largeStright,
+            int yahtzee, int chance) {
+        this.name = name;
         this.one = one;
         this.two = two;
         this.three = three;
@@ -44,6 +44,14 @@ public class Player {
         this.largeStright = largeStright;
         this.yahtzee = yahtzee;
         this.chance = chance;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getOne() {
@@ -98,8 +106,15 @@ public class Player {
         return bonus;
     }
 
-    public void setBonus(int bonus) {
-        this.bonus = bonus;
+    public void setBonus() {
+        if ((this.one
+                + this.two
+                + this.three
+                + this.four
+                + this.five
+                + this.six) >= 63) {
+            this.bonus = 35;
+        }
     }
 
     public int getThreeOfAKind() {
@@ -110,12 +125,12 @@ public class Player {
         this.threeOfAKind = threeOfAKind;
     }
 
-    public int getForOfAKind() {
+    public int getFourOfAKind() {
         return fourOfAKind;
     }
 
-    public void setForOfAKind(int forOfAKind) {
-        this.fourOfAKind = forOfAKind;
+    public void setFourOfAKind(int fourOfAKind) {
+        this.fourOfAKind = fourOfAKind;
     }
 
     public int getFullHouse() {
@@ -160,7 +175,7 @@ public class Player {
 
     public int getSum() {
         return this.one + this.two + this.three + this.four + this.five
-                + this.six + this.bonus + this.threeOfAKind + this.fourOfAKind 
+                + this.six + this.bonus + this.threeOfAKind + this.fourOfAKind
                 + this.fullHouse + this.smallStright + this.largeStright
                 + this.yahtzee + this.chance;
     }
